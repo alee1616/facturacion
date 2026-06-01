@@ -9,18 +9,18 @@ import javax.persistence.Embeddable;
 @Embeddable
 @Getter @Setter
 
-public class Address {
+public class Direccion {
 
     @Column (length = 30)
-    String street;
+    String viaPublica;
 
     @Column(length = 5)
-    int zipCode;
+    int codigoPostal;
 
     @Column(length = 20)
-    String city;
+    String municipio;
 
     @Column(length = 30)
-    String state;
+    String provincia;
 
 }

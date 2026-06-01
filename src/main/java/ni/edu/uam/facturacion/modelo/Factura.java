@@ -10,8 +10,15 @@ import org.openxava.calculators.CurrentYearCalculator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Collection;
 
 @Entity @Getter @Setter
+@View(members =
+        "anyo, numero, fecha;" +
+        "cliente;" +
+        "detalles;" +
+        "observaciones"
+        )
 public class Factura {
 
     @Id
@@ -38,6 +45,7 @@ public class Factura {
     Cliente cliente;
 
     @ElementCollection
+    @ListProperties("producto.numero, producto.descripcion, cantidad")
     Collection<Detalle> detalles;
 
     @Stereotype("MEMO")

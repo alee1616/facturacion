@@ -42,6 +42,7 @@ public class Factura {
     LocalDate fecha;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ReferenceView("Simple")
     Cliente cliente;
 
     @ElementCollection

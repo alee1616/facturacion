@@ -1,10 +1,5 @@
 /*C4*/SET SCHEMA PUBLIC
 DISCONNECT
 /*C5*/SET SCHEMA PUBLIC
-alter table Cliente add column codigoPostal integer
-alter table Cliente add column municipio varchar(20)
-alter table Cliente add column provincia varchar(30)
-alter table Cliente add column viaPublica varchar(30)
-DELETE FROM CLIENTE WHERE NUMERO=1
-INSERT INTO CLIENTE VALUES(1,'Marian',2456,'Managua','Managua ','Avenida del Cid ')
-COMMIT
+alter table Factura add column cliente_numero integer not null
+alter table Factura add constraint FKmd10sg74xw8mq3d2m9k2kxual foreign key (cliente_numero) references Cliente
